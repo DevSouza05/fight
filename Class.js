@@ -83,10 +83,14 @@ class Stage {
 
     update(){
         //Fighter 1
-        this.figther1El.querySelector('.name').innerHTML=this.fighter1.name;
+        this.figther1El.querySelector('.name').innerHTML=`${this.fighter1.name} - ${this.fighter1.life} HP`;
+        //working % the of bar
+        let f1Pct = (this.fighter1.life / this.fighter1.maxLife) * 100;
+        this.figther1El.querySelector('.bar').style.width = `${f1Pct}%`
 
          //Fighter 2
-         this.figther2El.querySelector('.name').innerHTML=this.fighter2.name;
-         
+         this.figther2El.querySelector('.name').innerHTML=`${this.fighter2.name} - ${this.fighter2.life} HP`;
+         let f2Pct = (this.fighter2.life / this.fighter2.maxLife) * 100;
+         this.figther2El.querySelector('.bar').style.width = `${f2Pct}%`
     }
 }
