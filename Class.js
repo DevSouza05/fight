@@ -78,7 +78,10 @@ class Stage {
 
     start(){
         this.update();
+
         //TODO : Evento do botão de atacar
+        this.figther1El.querySelector(".attackButton").addEventListener("click", ()=> this.doAttack(this.fighter1, this.fighter2))
+        this.figther2El.querySelector(".attackButton").addEventListener("click", ()=> this.doAttack(this.fighter2, this.fighter1))
     }
 
     update(){
@@ -92,5 +95,10 @@ class Stage {
          this.figther2El.querySelector('.name').innerHTML=`${this.fighter2.name} - ${this.fighter2.life} HP`;
          let f2Pct = (this.fighter2.life / this.fighter2.maxLife) * 100;
          this.figther2El.querySelector('.bar').style.width = `${f2Pct}%`
+    }
+
+    doAttack(attacking, attacked){
+        console.log(`${attacking.name} está atacando ${attacked.name}`);
+        this.update();
     }
 }
