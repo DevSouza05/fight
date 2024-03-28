@@ -98,6 +98,7 @@ class Stage {
     }
 
     doAttack(attacking, attacked){
-        console.log(`${attacking.name} está atacando ${attacked.name}`)
+        console.log(`${attacking.name} está atacando ${attacked.name}`);
+        this.update();
     }
 }
