@@ -99,7 +99,7 @@ class Stage {
 
     doAttack(attacking, attacked){
        if(attacking.life<= 0 || attacked.life <=0){
-        console.log("atacando em vao");
+        console.log("atacando oponente morto");
         return
        }
 
